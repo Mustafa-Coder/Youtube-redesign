@@ -1,0 +1,506 @@
+/* global Roules */
+*,html {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    scroll-behavior:smooth;
+}
+/* variables */
+:root {
+    --basicColor:#ed1f24;
+    --backGround:#1f2631;
+    --secGround:#2b303c;
+    --borcolor:#383e4b;
+    --icon:#8b929e;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(-150deg,var(--backGround),var(--secGround));
+    background-size: 500% 500%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    animation: bg 3s  cubic-bezier(.62,.28,.68,.98) infinite;
+}
+
+
+@keyframes bg {
+    0% {
+        background-position:0% 50%;
+    }
+    50% {
+        background-position:100% 0%;
+    }
+    
+    100% {
+        background-position:0% 90%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.yt {
+    width: calc(100% - 250px);
+    float: right;
+}
+ /* sidebar */
+ .yt .sidebar {
+    width: 250px;
+    position: fixed;
+    left: 0;
+    margin-right: 10px;
+ }
+/* Container */
+
+/* grid system */
+.grid-3 {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,auto));
+}
+/* media screens */
+
+/* end global rules  */
+
+/* navbar */
+.navbar {
+    height: 60px;
+    overflow: hidden;
+    padding: 0px 35px;
+    margin-bottom: 25px;
+    position: sticky;
+    z-index: 3;
+    background: #1e232c;
+    top: 0;
+    border-bottom: 1px solid var(--borcolor);
+}
+
+.navbar .search {
+    display: flex;
+    position: relative;
+    height: 100%;
+   
+    align-items: center;
+}
+
+
+.navbar .search i {
+    color: var(--icon);
+    margin-right: 20px;
+}
+.navbar .search form {
+    width: calc(100% - 30%);
+}
+.navbar .search form input {
+    width: 100%;
+    background: none;
+    border: 0;
+    padding: 9px;
+    color: white;
+    font-size: 14px;    
+}
+
+.navbar .links {
+    position: absolute;
+    top: -5px;
+    right: 17px;
+}
+
+
+
+.navbar .links ul {
+    list-style: none;
+    display: flex;
+
+}
+
+
+.navbar .links ul li  {
+   padding: 0 13px;
+}
+
+
+.navbar .links ul li a{color: var(--icon);}
+.navbar .links ul li a i {
+    margin-top: 8px;
+    font-size: 18px;
+}
+.navbar .links ul li a img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+/* end  navbar */
+
+/* sidebar */
+.yt .sidebar {
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    border-right: 2px solid var(--borcolor);
+    height: 100vh;
+}
+
+
+.yt .sidebar .box-one {
+    display: flex;
+    justify-content: space-between;
+}
+
+.yt .sidebar .box-one i {
+    margin: 17px;
+    cursor: pointer;
+}
+
+
+.yt .sidebar .box-one  .logo img  {
+    width: 25px;
+    margin: 17px;
+}
+
+/* links */
+
+.yt .sidebar .links ul {
+    list-style: none;
+    padding-left: 19px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.yt .sidebar .links ul {
+    border-bottom: 2px solid #2d334230;
+    transition: .6s ease;
+}
+
+
+.yt .sidebar .links ul li {
+    margin-bottom: 25px;
+}
+
+
+
+
+.yt .sidebar .links ul li a , .yt .sidebar .feedback a i {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* hover */
+
+.yt .sidebar .links ul li a i {
+    transition: .6s ease;
+}
+.yt .sidebar .links ul li a:hover i {
+    color: var(--basicColor);
+    transition: .6s ease;
+    margin-right: 20px;
+
+}
+
+.yt .sidebar .links ul li a i, .yt .sidebar .feedback a i  {
+    margin-right: 15px;
+}
+
+/* people */
+
+.yt .sidebar .people {
+    text-align: center;
+}
+.yt .sidebar .people img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin-left: -8px;
+}
+
+.activeLive {
+    border: 2px solid var(--basicColor);
+    padding: 4px
+}
+
+.yt .sidebar .feedback {
+    position: absolute;
+    bottom: 10px;
+}
+
+.yt .sidebar .feedback a {
+    display: block;
+    color: white;
+    padding: 20px;
+}
+
+@media (max-width:761px) {
+    .yt {
+        width: calc(100% - 58px);
+    }
+    /* sidebar */
+    .yt .sidebar {
+        width: 58px !important;
+        transition: .5s ease;
+    }
+
+    .yt .sidebar  span {
+        opacity: 0;
+    }
+
+    .yt .sidebar .links ul li { 
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .yt .sidebar .box-one i {
+        margin: 21px;
+    }
+    .yt .sidebar .people img {
+        margin-left: 0;
+    }
+}
+
+/* endsidebar */
+
+/* content */
+.yt .content {
+    margin:0 15px;
+}
+
+.yt .content .box-card {
+    width: auto;
+    height: 202px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .4s cubic-bezier(.62,.28,.68,.98);
+}
+
+
+.yt .content .box-card img {
+    width: 100%;
+}
+
+.yt .content .box-card .overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top:0;
+    opacity: 0;
+    left: 0;
+    /* transform: scale(1.5); */
+    transform: translateY(10px);
+    background-image: linear-gradient( 178deg, transparent, #060606);
+    background-size: 9%;
+    transition: .4s cubic-bezier(.62,.28,.68,.98);
+}
+
+
+
+.yt .content .box-card:hover  .overlay {
+    opacity:1;
+    /* transform: scale(1); */
+    transform: translateY(0px);
+    transition: .3s cubic-bezier(.62,.28,.26,.99);
+}
+
+
+
+
+.yt .content .box-card .overlay .info {
+    display: flex;
+    padding: 11px 11px;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;    
+}
+
+
+.yt .content .box-card .overlay h2 
+{
+    font-size: 17px;
+    margin: 20px 13px;
+    line-height: 1.6;
+    z-index: 2;
+
+}
+
+.yt .content .box-card .overlay .info span {
+    margin-right: 10px;
+    margin-left: 10px;
+    z-index: 2;
+}
+.yt .content .box-card .overlay .info img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+ 
+}
+
+
+/* end contnet */
+
+.yt .covertrending {
+    position: relative;
+    z-index: 1;
+    height: 316px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.yt .covertrending .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient( 142deg, #000000, #00000057);
+    background-size: 122%;
+
+}
+
+.yt .covertrending .cover {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.yt .covertrending .cover img {
+    width:100%;
+}
+
+.yt .covertrending .overlay h2 {
+    margin: 15px;
+}
+
+.yt .covertrending .overlay p {
+    font-size: 13px;
+    margin-left: 15px;
+    width: 550px;
+    line-height: 1.5;
+    color: gray;
+}
+.yt .covertrending .overlay .watch {
+    margin-left: 15px;
+    width: 150px;
+    height: 48px;
+    cursor: pointer ;
+    background: none;
+    border: 2px solid var(--basicColor);
+    color: var(--basicColor);
+    font-size: 14px;
+    border-radius: 10px;
+    transition: .6s cubic-bezier(.84,.41,.48,.99);
+}
+
+
+
+.yt .covertrending .overlay .watch:hover {
+    box-shadow: 0 0 0 100em #ed1f2494;
+    background-color: var(--basicColor);
+    color: white;
+    transition: .6s ease;
+}
+
+/* end cover trending */
+
+/* tags */
+
+.yt .tags .box {
+    list-style-type: none;
+    margin:15px 15px;
+    padding: 0;
+    display: flex;
+}
+
+
+.yt .tags .box li {
+    box-shadow: 0 0 10px #0c0d107a;
+    padding: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-right: 15px;
+    transition: .5s ease;
+}
+
+.yt .tags .box li:hover
+{
+    background:#282f3c;
+    transition: .5s ease;
+}
+/* end tags */
+
+/* modals */
+/* modnotify  */
+.modnotify {
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    background: #1e232c;
+    border-radius: 10px;
+    width: 506px;
+    padding: 16px;
+    transition: 1s ease;
+
+}
+
+.modnotify .box {
+    display: flex;
+    align-items: center;
+}
+
+
+.modnotify:hover {
+    transform: translateY(-10px);
+    transition: 1s ease;
+    cursor: pointer;
+}
+
+
+.modnotify .box .avatar img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%; 
+    margin-right: 15px;
+    animation: bor 3s ease infinite;
+}
+
+
+
+.modnotify .box .info {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+}
+
+
+.modnotify .box .info span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+ 
+.modnotify .box .close {
+    position: absolute;
+    right: 17px;
+    color: white;
+ }
+/* end modals */
